@@ -12,7 +12,7 @@
  * @param {number} n целое число
  * @returns {number}
  */
-function sum(n) {
+function sum1(n) {
   if (n < 0 || n === 0 || n === 1) {
     return 1;
   }
@@ -24,6 +24,15 @@ function sum(n) {
   }
 
   return sum;
+}
+
+// ---------------------------------- RECURSIVE VERSION ----------------------------------
+function sum(n) {
+  if (n < 0 || n === 0 || n === 1) {
+    return 1;
+  }
+
+  return n + sum(n - 1);
 }
 
 module.exports = sum;
