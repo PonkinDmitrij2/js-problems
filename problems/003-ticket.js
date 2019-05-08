@@ -14,7 +14,23 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+  const stringsNum = [...number];
+
+  const result = stringsNum.reduce((acc, item, i) => {
+    item = Number(item);
+
+    if (i < 3) {
+      acc[0] ? acc[0] += item : acc[0] = item;
+    }
+
+    if (i >= 3) {
+      acc[1] ? acc[1] += item : acc[1] = item;
+    }
+
+    return acc;
+  }, []);
+
+  return result[0] === result[1];
 }
 
 module.exports = checkTicket;
