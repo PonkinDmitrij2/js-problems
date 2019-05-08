@@ -13,7 +13,7 @@
  * @param {string} number
  * @returns {boolean}
  */
-function checkTicket(number) {
+function checkTicket1(number) {
   const stringsNum = [...number];
 
   const result = stringsNum.reduce((acc, item, i) => {
@@ -31,6 +31,13 @@ function checkTicket(number) {
   }, []);
 
   return result[0] === result[1];
+}
+
+function checkTicket(number) {
+  const part1 = Number(number[0]) + Number(number[1]) + Number(number[2]);
+  const part2 = Number(number[3]) + Number(number[4]) + Number(number[5]);
+
+  return part1 === part2;
 }
 
 module.exports = checkTicket;
